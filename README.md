@@ -26,7 +26,7 @@
 
 <h2>App Link</h2>
 
-insert link here
+https://smikhu-project2.herokuapp.com/chelsea
 
 <h2>Future Enhancements</h2>
 <ul>
