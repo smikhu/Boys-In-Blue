@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+        <%- include('./partials/navbar.ejs') %>
+    </nav>
+
+    <a class="back" href="/fixtures">Back</a>
+
+    <h1><%=predict.name %></h1>
+    <div class="comment">
+    Chelsea <%= predict.home%> - <%= predict.away%> Arsenal <br>
+    <%= predict.comment%> <br>
+    </div>
+
+
+
+
+
+    <footer>
+        <%- include('./partials/footer.ejs') %>
+    </footer>
+    
+
+    <style>
+        h1 {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        footer {
+            margin-top: 50px;
+        }
+        nav {
+            margin-bottom: 50px;
+        }
+        .back {
+            width: 10%;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            margin-right: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            background-color: #034694;
+            color: white;   
+        }
+        .comment {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</body>
+</html>

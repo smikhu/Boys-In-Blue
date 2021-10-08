@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <%- include('./partials/navbar.ejs') %>
+    </nav>
+
+    <img class ="cl" src="/images/cl.png" alt="">
+    
+    <div id="container">
+
+        <div class="left">
+
+        </div>
+
+        <div class="right">
+        <h1>TROPHIES</h1>
+
+        <ul class="trophies">
+            <li>2x UEFA Champions League</li>
+            <li>2x Europa League</li>
+            <li>6x Premier League</li>
+            <li>8x FA Cup</li>
+            <li>5x League Cup</li>
+            <li>4x Community Shield</li>
+            <li>2x UEFA Super Cup</li>
+        </ul>
+        <iframe class="yt" width="560" height="315" src="https://www.youtube.com/embed/Q3GxnCr_1mg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <%- include('./partials/footer.ejs') %>
+    </footer>
+
+    <style>
+        #container {
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .left {
+            width: 50%;
+            background-image: url("images/champions.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .right {
+            width: 50%;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        .trophies {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .cl {
+            display: none;
+        }
+        .yt {
+            width: 100%;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        @media only screen and (max-width: 900px) {
+        .left {
+        display: none;
+        }
+        .cl {
+            width: 100%;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .right {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+}
+    </style>
+</body>
+</html>

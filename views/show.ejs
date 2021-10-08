@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <%- include('./partials/navbar.ejs') %>
+    </nav>
+
+    <div class="player">
+    <h1 class="yup">#<%=data.number%> <%=data.name%> <img class="country" src="<%=data.flag%>" alt=""></h1>
+    <img class="portrait" src="<%=data.img; %>" alt="">
+    </div>
+    <ul>
+        <li><h4>Country - <%=data.nationality%></h4></li>
+        <li><h4>Date Of Birth - <%=data.birth%></h4></li>
+        <li><h4>Position - <%=data.position%></h4></li>
+        <li><h4>Appearances - <%=data.appearances%></h4></li>
+        <li><h4>Assists - <%=data.assists%></h4></li>
+        <li><h4>Goals - <%=data.goals%></h4></li>
+    </ul>
+    <h2>General Information</h2>
+    <h4 class="info"><%=data.info%></h4>
+    
+    <footer>
+        <%- include('./partials/footer.ejs') %>
+    </footer>
+    
+
+    <style>
+        .player {
+        display: inline-block;
+        
+        }
+        h1, h2 {
+        display:block;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        }
+        .portrait {
+        border-radius: 10px;
+        box-shadow: 5px 3px 10px #034694;
+        background-color: white;
+        }
+        ul {
+        display: inline-block;
+        margin-bottom: 50px;
+        }
+        ul li {
+        display: block;
+        text-align: left;
+        margin-bottom: 71px;
+        margin-left: 30px;
+        }
+        .country {
+        position: absolute;
+        margin-left: 10px;
+        margin-top: 5px;
+        }
+        .info {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        line-height: 30px;
+        padding: 0 25px;
+        }
+
+
+        @media only screen and (max-width: 790px) {
+        .player {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+        ul {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+        ul li {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        
+}
+    </style>
+
+    
+</body>
+</html>

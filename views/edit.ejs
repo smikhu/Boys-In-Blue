@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <nav>
+        <%- include('./partials/navbar.ejs') %>
+    </nav>
+
+    <a class="back" href="/fixtures">Back</a>
+
+    <h1>Edit Prediction</h1>
+    <form action="/fixtures/<%=predict._id%>?_method=PUT" method="POST">
+    Name <input type="text" name="name" value="<%=predict.name%>"> <br>
+    Chelsea <input class="score" type="text" name="home" value="<%=predict.home%>"> - <input class="score" type="text" name="away" value="<%=predict.away%>"> Arsenal <br>
+    <textarea type="text" name="comment" value="<%=predict.comment%>" placeholder="Edit your comment here..."></textarea> <br>
+    <input class="submit" type="submit" value="Submit Changes"> <br>
+
+
+
+
+
+    <footer>
+        <%- include('./partials/footer.ejs') %>
+    </footer>
+
+
+    <style>
+        h1 {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+        form {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 50px;
+        }
+        nav {
+            margin-bottom: 50px;
+        }
+        .score {
+            width: 20px;
+        }
+        input {
+            margin-top: 20px;
+        }
+        textarea {
+            margin-top: 20px;
+            width: 400px;
+            height: 100px;
+            padding: 10px;
+            outline: none;
+        }
+        .submit {
+            padding: 0px 5px;
+            border-radius: 5px;
+            background-color: #034694;
+            color: white;
+            cursor: pointer;
+        }
+        input {
+            outline: none;
+        }
+        .back {
+            width: 10%;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            margin-right: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            background-color: #034694;
+            color: white;   
+        }
+    </style>
+
+</body>
+</html>

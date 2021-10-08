@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <nav>
+        <%- include('./partials/navbar.ejs') %>
+    </nav>
+
+    <h3><a class="predict" href="/fixtures/new">Add a Prediction</a></h3>
+
+        <h1>This Weeks Fixture</h1>
+        <h3><img class="image" src="/images/chelsea.png" alt="" height="25px" width="25px"> Chelsea - Arsenal <img class="image" src="/images/arsenal.png" alt="" height="25px" width="25px"></h3>
+        <div class="container">
+        <ul>
+            <% predicts.forEach(predict=> { %>
+                <li class="list">
+                    <form class="delete" action="/fixtures/<%=predict.id%>?_method=DELETE" method="POST">
+                        <input type="submit" value="DELETE">
+                    </form> 
+                    <h4><%=predict.name; %></h4> <br>
+                    
+                    <h4><img class="image" src="/images/chelsea.png" alt="" height="25px" width="25px"> <%=predict.home; %> - <%=predict.away; %> <img class="image" src="/images/arsenal.png" alt="" height="25px" width="25px"></h4>  <br>
+                    <!--<a href="/fixtures/<%=predict._id; %>">-->
+                    
+                    <h5><%=predict.comment; %></h5> <br>
+                    </a>
+                    
+                    <a class="edit" href="/fixtures/<%=predict._id%>/edit">EDIT</a>
+                
+                </li>
+            <% }) %>
+        </ul>   
+    </div>
+    <footer>
+        <%- include('./partials/footer.ejs') %>
+    </footer>
+
+    <style>
+        .predict {
+            width: 20%;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            margin-right: 10px;
+            margin-top: 50px;
+            border-radius: 5px;
+            background-color: #034694;
+            color: white;    
+        }
+        h1 {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+        h3 {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .delete {
+            display: block;
+            text-align: right;
+            margin: 0 auto;
+            margin-right: 10px;
+        }
+        input {
+            padding: 0px 5px;
+            border-radius: 5px;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
+        .container {
+            margin: 50px 5px 0px 5px;
+        }
+        footer {
+            margin-top: 50px;
+        }
+        .edit {
+            padding: 0px 5px;
+            border-radius: 5px;
+            background-color: #034694;
+            color: white;
+            margin-left: 2px;
+        }
+        .list {
+            border: 2px solid #034694;
+            border-radius: 3px;
+            margin-top: 5px;
+            padding: 5px;
+        }
+
+
+    </style>
+
+</body>
+</html>

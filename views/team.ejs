@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+    <%- include('./partials/navbar.ejs') %>
+    </nav>
+
+    <h1>ROSTER</h1>
+    <div class="container">
+        <% for(let i = 0; i < data.length; i++) { %>
+            <div class="team">
+            <h5><%=data[i].name%></h5>
+            <a href="/team/<%= i %>"><img class="players" src="<%=data[i].img; %>" alt=""></a>
+        </div>
+        <%}%>
+    </div>
+
+    <footer>
+        <%- include('./partials/footer.ejs') %>
+    </footer>
+    
+        <style>
+    body {
+        height: 100vh;
+    }
+    .team {
+        margin: 30px;
+    }
+    .container {
+        font-size: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-align: center;
+        margin: 0 30px;
+    }
+
+    .players {
+        width: 150px;
+        height: 150px;
+        border: 0px solid black;
+        border-radius: 10px;
+        box-shadow: 2px 1px 5px #034694;
+        margin-top: 6px;
+        background-color: white;
+        position: relative;
+        top: 0;
+        transition: top ease 0.3s;
+    }
+    .players:hover {
+        top: -5px;
+    }
+    h3 {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        color: black;
+    }
+    h1 {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    .team {
+        margin-top: 50px;
+    }
+
+    .footer {
+        margin-top: 50px;
+    }
+    
+        </style>
+</body>
+</html>
